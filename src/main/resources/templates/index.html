@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User List</title>
+</head>
+<body>
+<div align="center">
+<H1>User List</H1>
+<br/>
+ <table border="1" cellpadding="10">
+   <thead>
+     <tr>
+        <th>UserId</th>
+        <th>UserName</th>
+        <th>email Id</th>
+        <th>Phone</th>
+        <th>Product Purchased</th>
+        <th>Purchase Date</th>
+        <th>Category</th>
+        <th>Create Date</th>
+        <th>Last Update Date</th>
+        <th>Action</th>
+      </tr>
+     </thead>
+     <tbody>
+       <tr th:each="user : ${listUsers}">
+          <td th:text="${user.userId}">UserId</td>
+          <td th:text="${user.username}">UserName</td>
+          <td th:text="${user.emailId}">email Id</td>
+          <td th:text="${user.phone}">Phone</td>
+          <td th:text="${user.productPerchased}">Product Purchased</td>
+          <td th:text="${user.perchaseDate}">Purchase Date</td>
+          <td th:text="${user.category}">Category</td>
+          <td th:text="${user.createDate}">Create Date</td>
+          <td th:text="${user.lastUpdateDate}">Last Update Date</td>
+          <td><a th:href="@{/update/{id}(id=${user.id})}">Update</a> || <a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+        </tr>
+     </tbody>
+     </table>
+     <br>
+     <br>
+     <a href="/logout">Log Out</a>
+   </div>
+</body>
+</html>

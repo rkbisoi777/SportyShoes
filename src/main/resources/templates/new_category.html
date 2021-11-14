@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Category</title>
+</head>
+<body>
+<div align="center">
+ <h1>Add Category</h1>
+    <br/>
+     <form action="#" th:action="@{/save}" th:object="${categories}"
+            method="post">
+ 
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="*{categoryName}" /></td>
+                </tr>                            
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <br>
+        <a href="/logout">Log Out</a>
+   
+
+
+</div>
+</body>
+</html>
